@@ -1,0 +1,67 @@
+<nav class="navbar navbar-expand-sm navbar-dark bg-primary-c fixed-top">
+    <a class="navbar-brand" href="#"><img src="assets/imgs/logo.png" alt=""></a>
+
+    <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="text-white">
+            <i class="fa fa-bars fa-1x"></i>
+        </span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="collapsibleNavId">
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+            <li class="nav-item active">
+                <a class="nav-link" [routerLink]="[ '/' ]">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active dropdown">
+                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Orders</a>
+                <div class="dropdown-menu">
+                    <a href="#" class="dropdown-item">Fuel Order</a>
+                    <div class="dropdown-divider"></div>
+                    <a href="#" class="dropdown-item">Gas Order</a>
+                    <div class="dropdown-divider"></div>
+                    <a href="#" class="dropdown-item">Flexy Card</a>
+                </div>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" [routerLink]="[ '/products' ]">Shop</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" [routerLink]="[ '/about' ]">About Us</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" [routerLink]="[ '/contact' ]">Contact Us</a>
+            </li>
+        </ul>
+        <ul class="navbar-nav mr-4 mt-2 mt-lg-0">
+            <li class="nav-item active">
+                <a class="nav-link" href="#">
+                    <span class="block">
+                      <span *ngFor="let price of prices"  class="flash-me">
+                        <b>Petrol</b>: {{ price.P_USD }} USD / {{ price.P_ZWL }} ZWL <b>Diesel</b>: {{ price.D_USD }} USD / {{ price.D_ZWL }} ZWL
+                      </span>
+                    </span>
+
+                    <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="#"> <i class="fa fa-heart"></i> <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="#"> <i class="fa fa-shopping-basket"></i> <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active" *ngIf="!auth.authenticated">
+                <a class="nav-link" [routerLink]="[ '/login' ]"> <i class="fa fa-sign-in"></i> Login/Sign Up <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active" *ngIf="auth.authenticated">
+                <a class="nav-link" (click)="logout()"> <i class="fa fa-sign-out"></i> Logout <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active" *ngIf="auth.authenticated">
+                <a class="nav-link" [routerLink]="[ '/users' ]"> <i class="fa fa-user"></i> My Account <span class="sr-only">(current)</span></a>
+            </li>
+        </ul>
+        <!-- <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="text" placeholder="Search">
+            <button class="btn btn-success my-2 my-sm-0" type="submit">Search</button>
+        </form> -->
+    </div>
+</nav>

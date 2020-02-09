@@ -1,0 +1,31 @@
+img {
+    width: 100px;
+}
+
+.block {
+    display: inline-block;
+    margin-top: -5px;
+    border-radius: 5px;
+    padding: 4px 4px;
+    -webkit-animation: blinker 5s infinite;
+    /* Safari 4+ */
+    -moz-animation: blinker 5s infinite;
+    /* Fx 5+ */
+    -o-animation: blinker 5s infinite;
+    /* Opera 12+ */
+    animation: blinker 5s infinite;
+    /* IE 10+, Fx 29+ */
+}
+
+@keyframes blinker {
+    0%,
+    49% {
+        background-color: #42bc35;
+        border: 3px solid #cf1c20;
+    }
+    50%,
+    100% {
+        background-color: #cf1c20;
+        border: 3px solid #42bc35;
+    }
+}

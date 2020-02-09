@@ -1,0 +1,38 @@
+<ngx-spinner></ngx-spinner>
+<div id="logreg-forms">
+
+    <div class="form-signin">
+
+        <h4 align="center">Login</h4>
+
+        <form (ngSubmit)="login(loginForm)" #loginForm="ngForm">
+
+            <input type="email" class="form-control" placeholder="Email address" #email="ngModel" [(ngModel)]="credential.email" name="email" required>
+            <p class="text-danger" [hidden]="email.valid || submitted == false">
+                Please enter valid email
+            </p>
+            <input type="password" class="form-control" #password="ngModel" placeholder="Password" [(ngModel)]="credential.password" name="password" required>
+            <p class="text-danger" [hidden]="password.valid || submitted == false" padding-left>
+                Please enter password
+            </p>
+            <p><br>
+                <button class="btn btn-success btn-block" type="submit">
+                    <i class="fas fa-sign-in-alt"></i> Login
+                </button>
+        </form>
+
+        <a href="#" id="forgot_pswd" routerLink="/forgot-password">Forgot password?</a>
+        <hr>
+        <!-- <p>Don't have an account!</p>  -->
+        <button class="btn btn-primary btn-block" type="button" id="btn-signup" routerLink="/register-user"><i
+          class="fa fa-user-plus"></i> Register New
+        Account</button>
+    </div>
+
+</div>
+
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
